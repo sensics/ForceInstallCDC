@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <LIBWDI_ROOT>$(SolutionDir)\vendor\libwdi</LIBWDI_ROOT>
+  </PropertyGroup>
+  <PropertyGroup>
+    <IncludePath>$(LIBWDI_ROOT)\libwdi;$(IncludePath)</IncludePath>
+    <LibraryPath>$(LIBWDI_ROOT)\libwdi;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <PostBuildEvent>
+      <Command>copy "$(LIBWDI_ROOT)\libwdi\libwdi.dll" "$(OUTPUT_DIR)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup>
+    <PostBuildEvent>
+      <Message>Copying libwdi.dll...</Message>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>libwdi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="LIBWDI_ROOT">
+      <Value>$(LIBWDI_ROOT)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+  </ItemGroup>
+</Project>
