@@ -65,10 +65,7 @@
       <AdditionalDependencies>$(LIBWDI_ROOT)\libwdi\libwdi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <UACExecutionLevel>HighestAvailable</UACExecutionLevel>
     </Link>
-    <PostBuildEvent>
-      <Command>copy "$(LIBWDI_ROOT)\libwdi\libwdi.dll" "$(OutDir)"</Command>
-      <Message>Copying libwdi.dll</Message>
-    </PostBuildEvent>
+    <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -89,10 +86,7 @@
       <AdditionalDependencies>$(LIBWDI_ROOT)\libwdi\libwdi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <UACExecutionLevel>HighestAvailable</UACExecutionLevel>
     </Link>
-    <PostBuildEvent>
-      <Command>copy "$(LIBWDI_ROOT)\libwdi\libwdi.dll" "$(OutDir)"</Command>
-      <Message>Copying libwdi.dll</Message>
-    </PostBuildEvent>
+    <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />

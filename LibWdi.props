@@ -10,12 +10,16 @@
   </PropertyGroup>
   <ItemDefinitionGroup>
     <PostBuildEvent>
-      <Command>copy "$(LIBWDI_ROOT)\libwdi\libwdi.dll" "$(OUTPUT_DIR)"</Command>
+      <Command>copy "$(LIBWDI_ROOT)\libwdi\libwdi.dll" "$(OutputPath)"
+copy "$(LIBWDI_ROOT)\COPYING" "$(OutputPath)\libwdi-COPYING"
+copy "$(LIBWDI_ROOT)\COPYING-LGPL" "$(OutputPath)\libwdi-COPYING-LGPL"
+copy "$(LIBWDI_ROOT)\README" "$(OutputPath)\libwdi-README"
+copy "$(SolutionDir)\libwdi-source.txt" "$(OutputPath)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup>
     <PostBuildEvent>
-      <Message>Copying libwdi.dll...</Message>
+      <Message>Copying libwdi files...</Message>
     </PostBuildEvent>
     <Link>
       <AdditionalDependencies>libwdi.lib;%(AdditionalDependencies)</AdditionalDependencies>
