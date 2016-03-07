@@ -101,7 +101,7 @@ static Results tryInstall(const char *extractLocation = nullptr) {
   int result = wdi_create_list(&list, nullptr);
   if (result != WDI_SUCCESS) {
     throw std::runtime_error(
-        std::string("libwdi could not create a device list:") +
+        std::string("libwdi could not create a device list: ") +
         wdi_strerror(result));
   }
 
