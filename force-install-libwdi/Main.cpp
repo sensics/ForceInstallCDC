@@ -73,8 +73,7 @@ struct OverrideDevice {
 /// Array of overrides that will trigger a CDC install (can add more).
 static const auto OVERRIDES = {
     OverrideDevice{0x03EB, 0x2421, "OSVR"},
-    /*OverrideDevice{0x03EB, 0x2421, "OSVR"},*/
-};
+    OverrideDevice{0x03EB, 0x0678, "Sensics Emulated Device"}};
 
 /// The inf file name to generate.
 static const char INF[] = "sensics_generic_cdc.inf";
